@@ -267,7 +267,7 @@ sub update_log_filenames {
 
 	$chat_log_file    = substr( $base_chat_log_file,    0, length( $base_chat_log_file ) - 4 ) . "$logAppend.txt";
 	$console_log_file = substr( $base_console_log_file, 0, length( $base_console_log_file ) - 4 ) . "$logAppend.txt";
-	$storage_log_file = substr( $base_storage_log_file, 0, length( $base_storage_log_file ) - 4 ) . "$logAppend.txt";
+	$storage_log_file = substr( $base_storage_log_file, 0, length( $base_storage_log_file ) - 4 ) . "$logAppend";
 	$shop_log_file    = substr( $base_shop_log_file,    0, length( $base_shop_log_file ) - 4 ) . "$logAppend.txt";
 	$monster_log_file = substr( $base_monster_log_file, 0, length( $base_monster_log_file ) - 4 ) . "$logAppend.txt";
 	$item_log_file    = substr( $base_item_log_file,    0, length( $base_item_log_file ) - 4 ) . "$logAppend.txt";

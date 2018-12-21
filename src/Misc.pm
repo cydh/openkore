@@ -3411,8 +3411,15 @@ sub whenGroundStatus {
 sub writeStorageLog {
 	my ($show_error_on_fail) = @_;
 	my $f;
-
-	if (open($f, ">:utf8", $Settings::storage_log_file)) {
+	my $storage_name = defined $storageTitle ? lc $storageTitle : "";
+	my $exclude_list = join ",",("Storage", $masterServer->{storageTitleDefault}, $config{logAppendStorage_exclude});
+	if ($config{logAppendStorage} && $storage_name ne "" && !existsInList($exclude_list, $storage_name)) {
+		$storage_name = "_".$storage_name;
+	} else {
+		$storage_name = "";
+	}
+	my $storage_log_file = $Settings::storage_log_file.$storage_name.".txt";
+	if (open($f, ">:utf8", $storage_log_file)) {
 		print $f TF("---------- Storage %s -----------\n", getFormattedDate(int(time)));
 		for my $item (@{$char->storage}) {
 

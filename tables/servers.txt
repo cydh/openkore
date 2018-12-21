@@ -112,6 +112,7 @@ charDeleteDateType 1
 blockingPlayerCancel 1
 pauseCharLogin 1
 rankingSystemType 1
+storageTitleDefault Storage Valhalla
 
 # Renewal
 # http://playragnarok.com
